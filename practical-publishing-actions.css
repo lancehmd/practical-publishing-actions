@@ -1,0 +1,27 @@
+#major-publishing-actions {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+#major-publishing-actions .clear {
+    display: none;
+}
+
+#delete-action {
+    flex: 1 1 50%;
+    order: 1;
+}
+
+#publishing-action {
+    flex: 1 1 50%;
+    order: 2;
+}
+
+.ppa-actions {
+    flex: 1 0 100%;
+    margin-top: 5px;
+    order: 3;
+    text-align: right;
+}
