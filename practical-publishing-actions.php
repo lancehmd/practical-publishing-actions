@@ -25,11 +25,17 @@ if ( ! defined( 'WPINC' ) ) {
 
 /**
  * Practical Publishing Actions main class.
+ *
+ * @since 1.0.0
  */
 final class Practical_Publishing_Actions {
 
 	/**
 	 * Initialize our plugin hooks.
+	 *
+	 * @return void
+	 *
+	 * @since 1.0.0
 	 */
 	public function init() {
 
@@ -41,6 +47,10 @@ final class Practical_Publishing_Actions {
 
 	/**
 	 * Register our admin stylesheet.
+	 *
+	 * @return void
+	 *
+	 * @since 1.0.0
 	 */
 	public function register_admin_stylesheet() {
 
@@ -50,6 +60,10 @@ final class Practical_Publishing_Actions {
 
 	/**
 	 * Render our button with the other publish actions.
+	 *
+	 * @return void
+	 *
+	 * @since 1.0.0
 	 */
 	public function render_publishing_actions() {
 
@@ -94,6 +108,8 @@ final class Practical_Publishing_Actions {
 	 * @param string  $location Location to redirect to.
 	 * @param integer $post_id  Current post ID.
 	 * @return string The new location to redirect to.
+	 *
+	 * @since 1.0.0
 	 */
 	public function redirect_after_publish( $location, $post_id ) {
 
@@ -109,7 +125,7 @@ final class Practical_Publishing_Actions {
 				'post_status' => 'publish',
 			) );
 
-			$post_type = get_post_type();
+			$post_type  = get_post_type();
 			$query_args = array( 'post_type' => $post_type );
 		}
 
@@ -147,5 +163,7 @@ function practical_publishing_actions() {
  * Hook the plugin bootstrap function.
  */
 if ( is_admin() ) {
+
 	add_action( 'plugins_loaded', 'practical_publishing_actions' );
+
 }
